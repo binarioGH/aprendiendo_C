@@ -15,18 +15,22 @@ int main(){
 	if(select == 0){
 		ans = suma(n1, n2);
 		printf("\n \n la respuesta es %i",ans);
+		getch();
 	}
 	else if(select == 1){
 		ans = resta(n1, n2);
 		printf("\n \n la respuesta es %i",ans);
+		getch();
 	}
 	else if(select == 2){
 		ans = div(n1, n2);
 		printf("\n \n la respuesta es %i", ans);
+		getch();
 	}
 	else if(select == 3){
 		ans = mult(n1, n2);
 		printf("\n \n la respuesta es %i", ans);
+		getch();
 	}
 	return 0;
 }
