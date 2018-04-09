@@ -8,7 +8,7 @@ int main(){
 	}
 	while(count >= 0){
 		printf("la cuenta va en: %i \n", count);
-		count -= 1;
+		count -= 1;	
 	}
 	return 0;
 }
