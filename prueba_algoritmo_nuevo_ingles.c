@@ -75,7 +75,6 @@ int main(){
 }
 void pregunta(q, s1, s2, s3, s4, answ){
 	char respuesta;
-	system("cls");
 	printf("%s \n", q);
 	printf("%s \n", s1);
 	printf("%s \n", s2);
