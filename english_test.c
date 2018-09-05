@@ -73,7 +73,8 @@ int main(){
 	printf("\n correctas: %i \n incorrectas: %i", correctas, incorrectas);
 	return 0;
 }
-void pregunta(q, s1, s2, s3, s4, answ){
+void pregunta(char q[40],char s1[40],char s2[40],char s3[40],char s4[40],char answ[1]){
+    fflush(stdin);
 	char respuesta;
 	system("cls");
 	system("pause");
@@ -84,7 +85,7 @@ void pregunta(q, s1, s2, s3, s4, answ){
 	printf("%s \n", s4);
 	printf("tu respuesta: ");
 	scanf("%c", &respuesta);
-	if (toupper(respuesta)==answ){
+	if (respuesta==answ){
 		correctas = correctas + 1;
 	}
 	else{
