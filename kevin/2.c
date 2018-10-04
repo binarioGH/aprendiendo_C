@@ -1,46 +1,37 @@
-#include <stdio.h>
 void menu();
-int sumar();
-int restar();
-int multiplicar();
-int dividir();
+void sumar(int na, int nb, int mlt);
+void multiplicar(int na, int nb);
+void dividir(int na, int nb);
+
+#include <stdio.h>
+
 int main(){
 	menu();
 	return 0;
 }
+
 void menu(){
-	int d, n1, n2, t = 0;
-	while(1){
-		fflush(stdin);
-		printf("1.Suma\n2.Resta\n3.Multiplicacion\n4.Divicion\n5.salir");scanf("%i",&d);
-		printf("\nIngresa los 2 numeros: ");scanf("%i %i", &n1, &n2);
-		if(d == 1){
-			t = sumar(n1, n2);
-		}
-		else if(d == 2){
-			t = restar(n1, n2);
-		}
-		else if(d == 3){
-			t = multiplicar(n1, n2);
-		}
-		else if(d == 4){
-			t = dividir(n1, n2);
-		}
-		else if(d == 5){
-			break;
-		}
-		printf("\nEl resultado es: %i", t);
+	int opt, n1, n2;
+	printf("\n\n\n1: sumar\n2: restar\n3: multiplicar\n4: dividir\n>>>>");
+	scanf("%i", &opt);
+	printf("\nIngresa el primer numero: ");scanf("%i", &n1);
+	fflush(stdin);
+	printf("\nIngresa el segundo numero: ");scanf("%i", &n2);
+	switch(opt){
+		case 1:sumar(n1, n2, 1);break;
+		case 2:sumar(n1,n2, -1);break;
+		case 3:multiplicar(n1,n2);break;
+		case 4:dividir(n1,n2);break;
+		default: fflush(stdin);menu();
 	}
+
 }
-int suma(int n1, int n2){
-	return n1 + n2;
+void sumar(int na, int nb, int mlt){
+	printf("El resultado es: %i", na + (nb*mlt));
 }
-int resta(int n1, int n2){
-	return n1 - n2;
+void multiplicar(int na, int nb){
+	printf("El resultado es: %i", na * nb);
 }
-int multiplicar(int n1, int n2){
-	return n1 * n2;
-}
-int dividir(int n1, int n2){
-	return (int)n1/n2;
+void dividir(int na, int nb){
+	printf("El resultado es: %.2f", (float)na / (float)nb);
 }
